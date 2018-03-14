@@ -5,7 +5,7 @@ public class Word {
 	private String alienWord;
 	private String translation;
 	
-	@Override
+/*	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -25,7 +25,7 @@ public class Word {
 		} else if (!translation.equals(other.translation))
 			return false;
 		return true;
-	}
+	}*/
 	
 	public String getAlienWord() {
 		return alienWord;
@@ -38,7 +38,7 @@ public class Word {
 	}
 	public void setTranslation(String translation) {
 		this.translation = translation;
-	}
+	} 
 	
 
 }
