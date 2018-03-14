@@ -16,6 +16,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class AlienController {
+	AlienDictionary al_dic = new AlienDictionary();
 	
     @FXML
     private ResourceBundle resources;
@@ -43,8 +44,30 @@ public class AlienController {
     
     @FXML
     void doTranslate(ActionEvent event) {
-    	    	
-    }
+    	
+    	//if (){
+    		String txt_inserito = txtWord.getText().toLowerCase();
+    		String[] items = txt_inserito.split(" ");
+    		if(items.length == 0){
+    			txtResult.appendText("Non hai inserito nessuna parola!\n");
+    		}
+    	
+    		else if (items.length == 1){
+    			txtResult.appendText("Parola aliena: " + items[0] + " Traduzione: " + al_dic.translateWord(items[0]) + "\n");
+    		}
+    	
+    		else if (items.length == 2){
+    			al_dic.addWord(items[0], items[1]);
+    			txtResult.appendText("Parola aliena: " + items[0] + " Traduzione aggiornata: " + items[1] + "\n");
+    		}
+    	
+    		else
+    			txtResult.appendText("Hai inserito troppe parole.\n");
+    	}
+    	
+    	//else
+    		//txtResult.setText("Caratteri inseriti non validi!\n");
+   
     
     
     @FXML
